@@ -1,0 +1,7 @@
+.*
+!/.gitignore
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+crash.*.log

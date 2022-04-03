@@ -1,0 +1,18 @@
+---
+- name: cat hostname
+  hosts: all
+  become: true
+  gather_facts: false
+
+
+  tasks:
+  - name: create file with content
+    shell: echo "STAGING ENV" > file1
+
+  - name: get content of the file
+    shell: cat file1
+    register: fcont
+
+  - name: print content of the file
+    debug:
+      msg: "{{ fcont }}"
